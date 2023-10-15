@@ -1,3 +1,81 @@
-body {
-    background-color: azure;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch&family=Lexend&family=Pixelify+Sans&family=Shadows+Into+Light&display=swap');
+
+body{
+    background-color: aqua;
+   
 }
+
+#playAudio{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+#stopAudioButton {
+    position: absolute;
+    top: 35px;
+    left: 10px;
+}
+
+h1{
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 70px;
+}
+
+h2{
+  
+}
+ul {
+    text-align: center;
+    font-size: 20px;
+    list-style: none;
+    word-spacing: 55%;
+
+}
+header{
+    text-align: center;
+}
+
+ li{ 
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+/* #buttons1{
+    
+    bottom: 10px;
+    text-align: left;
+    
+    margin: 20px;
+    padding: 30px; 
+    word-spacing: 30px;
+}
+#buttons2{
+    
+    bottom: 10px;
+    text-align: right;
+   
+    margin: 20px;
+    padding: 30px; 
+    word-spacing: 30px; */
+/* } */
+
+/* @keyframes img{
+    0% {
+        transform: translateX(100px) rotateY(0deg); 
+    } /* moves element across the X axis */ /* rotates element around Y axis */
+    /* 49% {
+        transform: translateX(500px);
+    }
+    50% {
+        transform: translateX(500px) rotateY(360deg);
+    }
+    100% {
+        transform: translateX(100px);
+    }  */
+    /* animates images */
+/* } */ 
