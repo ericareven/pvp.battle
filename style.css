@@ -4,6 +4,9 @@ body{
     background-color: aqua;
    
 }
+#gamePlay {
+    visibility: visible;
+}
 
 #playAudio{
     position: absolute;
@@ -80,6 +83,9 @@ header{
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+#gameOver {
+    visibility: hidden;
 }
   
 /* #buttons1{

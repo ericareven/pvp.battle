@@ -37,7 +37,7 @@ class Player {
         const successProbability = 0.7; // 70% success rate
         if (Math.random() < successProbability) {
           // Punch succeeds, reduce opponent's health by 5
-          opponent.health -= 5;
+          opponent.health -= 25;
           document.getElementById(playerID + "health").innerHTML = opponent.health;
 
           // Check if opponent's health has dropped below 0
@@ -50,6 +50,7 @@ class Player {
           }
         } else {
           showModal(`${this.name}'s punch missed.`);
+          // alert(`${this.name}'s punch missed.`);
         }
     } else {
       throw new Error("Invalid opponent");
@@ -72,6 +73,7 @@ class Player {
           }
         } else {
           showModal(`${this.name}'s kick missed.`);
+          // alert(`${this.name}'s kick missed.`);
         }
       } else {
         throw new Error("Invalid opponent");
@@ -92,7 +94,9 @@ class Player {
   
   takeTurn(opponent, action, playerID) {
     if (this.health <= 0) {
-        console.log(`${this.name} can't take a turn because they have been defeated.`);
+      determineWinner()
+      gameOver(playerID)
+      // console.log(`${this.name} can't take a turn because they have been defeated.`);
     } else if (this.isTurn) {
         console.log(`${this.name}'s turn:`);
 
@@ -109,6 +113,7 @@ class Player {
         this.isTurn = false; // End the turn after the action is performed
     } else {
       showModal("It's not your turn!");
+      // alert("It's not your turn!");
     }
   }
 }      
@@ -208,5 +213,26 @@ stopAudioButton.addEventListener("click", function() {
 // }
   audio.pause()
 })
+
+function determineWinner() {
+  let winner = null;
+  if (player1.health <= 0) {
+    winner = 'player2';
+  } else if (player2.health <= 0) {
+    winner = 'player1';
+  }
+
+  if (winner) {
+    gameOver(winner);
+  }
+}
+
+function gameOver(playerID) {
+  // showModal(`${playerID} Wins`)
+  document.getElementById('gamePlay').style.visibility = 'hidden'
+  document.getElementById('gameOver').style.visibility = 'visible'
+  const winner = document.getElementById('playerWin')
+  winner.innerHTML = `${playerID} is the WINNER!`
+}
 
 });
